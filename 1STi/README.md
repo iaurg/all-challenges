@@ -19,3 +19,6 @@ npm run watch
 ### Dificuldades
 - Me adaptar ao padrão BEM CSS, nunca havia utilizado e parece um pouco vago usar BEM + LESS sendo que pela lógica perco a função de encadeamento de classes
 - Maior parte do tempo foi definindo um visual mais interessante para a aplicação. O visual apresentado no desafio pouco me agradou, então decidi criar um novo.
+
+## Tempo para conclusão do desafio
+🕒2:23:01
