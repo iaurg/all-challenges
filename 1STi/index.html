@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+  </head>
+  <body>
+    <div class="weatherapp">
+      <!-- <h1>Previsão do tempo</h1> -->
+      <input
+        class="weatherapp__input"
+        type="text"
+        placeholder="Insira aqui o nome da cidade"
+        id=""
+      />
+      <div class="loader">
+        <i class="fas fa-spinner fa-pulse"></i>
+        Buscando dados
+      </div>
+      <div class="error error--hide">
+        Nenhuma cidade encontrada 😢
+      </div>
+      <div class="current-city"></div>
+
+      <div class="content-card">
+        <h2 class="sub-title">Capitais</h2>
+        <ul class="principal-cities"></ul>
+      </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+    <script src="./assets/js/api.js"></script>
+    <script
+      src="https://kit.fontawesome.com/44e99800d4.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

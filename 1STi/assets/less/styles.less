@@ -1,0 +1,115 @@
+@background-color: #fff;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #dfe4ea;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.weatherapp {
+  background: #f9f9f9;
+  display: flex;
+  width: 100%;
+  max-width: 250px;
+  margin: 0 auto;
+  margin-top: 15px;
+  border-radius: 8px;
+  border: 5px solid #fff;
+  min-height: 150px;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.weatherapp__input {
+  border-radius: 5px;
+  background: #fff;
+  width: 95%;
+  border: none;
+  height: 30px;
+  padding-left: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ebebeb;
+}
+
+.weatherapp__input::placeholder {
+  color: #6f6f6f;
+}
+
+.current-city {
+  width: 100%;
+}
+
+.card {
+  border-radius: 10px;
+  background: linear-gradient(90deg, #fe376c 0%, #fac659 100%), #c4c4c4;
+  color: #fff;
+  display: flex;
+  width: 100%;
+  min-height: 150px;
+  align-items: center;
+}
+
+.card-left {
+  padding-left: 30px;
+}
+.card-left__city {
+  font-weight: 600;
+}
+
+.card-left__today {
+  font-size: 13px;
+}
+
+.card-left__temperature {
+  font-size: 50px;
+}
+
+.sub-title {
+  font-size: 13px;
+  color: #878787;
+  padding: 10px 0;
+}
+.content-card {
+  background: #ffffff;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.09);
+  border-radius: 5px;
+  margin: 15px 0;
+  padding-left: 10px;
+}
+.principal-cities {
+  list-style: none;
+  color: #6a6a6a;
+}
+.pricipal-cities__item {
+  display: flex;
+  padding: 10px 0;
+  font-size: 13px;
+}
+.item__min,
+.item__max {
+  padding-right: 15px;
+}
+.fa-temperature-low {
+  color: #50a4eb;
+  padding-right: 5px;
+}
+
+.fa-temperature-high {
+  color: #fb8062;
+  padding-right: 5px;
+}
+
+.loader,
+.error {
+  color: #6f6f6f;
+  text-align: center;
+  width: 100%;
+}
+
+.loader--hide,
+.error--hide {
+  display: none;
+}

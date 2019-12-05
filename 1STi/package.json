@@ -1,0 +1,25 @@
+{
+  "watch": {
+    "less": {
+      "patterns": [
+        "assets",
+        "less"
+      ],
+      "extensions": "less",
+      "quiet": true,
+      "legacyWatch": true,
+      "delay": 1000,
+      "runOnChangeOnly": true
+    }
+  },
+  "scripts": {
+    "less": "lessc assets/less/styles.less assets/css/styles.css",
+    "watch": "npm-watch"
+  },
+  "devDependencies": {
+    "less": "^3.10.3"
+  },
+  "dependencies": {
+    "npm-watch": "^0.6.0"
+  }
+}
