@@ -1,6 +1,6 @@
 # Repositório de desafios ⚔️
 
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png | width=100)
+<img src="[./img.png](https://octodex.github.com/images/yaktocat.png)" alt="Image of Yaktocat" width="100">
 
 O objetivo desse repositório é reunir todos os desafios que farei. Após estudar diversos conceitos creio que a melhor maneira de praticar é fazendo, então farei o máximo de desafios contidos [neste](https://github.com/felipefialho/frontend-challenges) repositório com challenges.
 
