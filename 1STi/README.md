@@ -19,6 +19,7 @@ npm run watch
 ### Dificuldades
 - Me adaptar ao padrão BEM CSS, nunca havia utilizado e parece um pouco vago usar BEM + LESS sendo que pela lógica perco a função de encadeamento de classes
 - Maior parte do tempo foi definindo um visual mais interessante para a aplicação. O visual apresentado no desafio pouco me agradou, então decidi criar um novo.
+- A API do Yahoo Weather está indisponível publicamente e precisa de diversas burocracias para usar. A AccuWeather tem limite de 50 requisições/dia o que dificultou alguns testes, por isso optei pela Open Weather.
 
 ## Tempo para conclusão do desafio
 🕒2:23:01
