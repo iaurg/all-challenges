@@ -1,15 +1,16 @@
 # Site de apostas 💰
 
-Este desafio é realizado com base no repositorio da (Addison Global)[https://github.com/addisonglobal/frontend-technical-test] e é o (segundo)[https://github.com/Italox/all-challenges/] da lista de desafios.
+Este desafio é realizado com base no repositorio da [Addison Global](https://github.com/addisonglobal/frontend-technical-test) e é o [segundo](https://github.com/Italox/all-challenges) da lista de desafios.
 
 O que precisa ser feito:
-[x] Usar create-react-app
-[x] Biblioteca UI (Evergreen)
-[x] ESLint, editorconfig e Prettier
-[x] Configuração de Testes
-[] Teste do sistema
-[x] Tela de listagem de eventos
-[] Listagem de apostas
+
+- [x] Usar create-react-app
+- [x] Biblioteca UI (Evergreen)
+- [x] ESLint, editorconfig e Prettier
+- [x] Configuração de Testes
+- [] Teste do sistema
+- [x] Tela de listagem de eventos
+- [] Listagem de apostas
 
 ## Recursos
 
