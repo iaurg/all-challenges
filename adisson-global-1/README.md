@@ -8,9 +8,9 @@ O que precisa ser feito:
 - [x] Biblioteca UI (Evergreen)
 - [x] ESLint, editorconfig e Prettier
 - [x] Configuração de Testes
-- [] Teste do sistema
+- [ ] Teste do sistema
 - [x] Tela de listagem de eventos
-- [] Listagem de apostas
+- [ ] Listagem de apostas
 
 ## Recursos
 
