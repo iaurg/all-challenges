@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Pane, Card, Heading, Button } from 'evergreen-ui';
+import PropTypes from 'prop-types';
 
 export default function Event({ id, name, markets }) {
   const [checked, setChecked] = useState([]);
@@ -111,3 +112,25 @@ export default function Event({ id, name, markets }) {
     </Card>
   );
 }
+
+Event.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  markets: PropTypes.arrayOf(
+    PropTypes.objectOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        selections: PropTypes.arrayOf(
+          PropTypes.objectOf(
+            PropTypes.shape({
+              id: PropTypes.string.isRequired,
+              name: PropTypes.string.isRequired,
+              price: PropTypes.number.isRequired,
+            })
+          )
+        ),
+      })
+    )
+  ).isRequired,
+};
