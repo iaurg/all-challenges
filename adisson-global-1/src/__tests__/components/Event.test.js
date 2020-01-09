@@ -50,6 +50,7 @@ describe('Test Event Component', () => {
   it('should render correct event', () => {
     const { asFragment } = render(
       <Event
+        key="EVT_1"
         id="EVT_1"
         name="Real Madrid vs Barcelona"
         markets={marketsModel}
@@ -71,6 +72,13 @@ describe('Test Event Component', () => {
     expect(marketButton).toHaveStyle(`
       background-image: linear-gradient(rgb(35, 194, 119), rgb(57, 157, 108));
       color:white;
+    `);
+
+    fireEvent.click(marketButton);
+
+    expect(marketButton).toHaveStyle(`
+      background-image: linear-gradient(to bottom, #FFFFFF, #F4F5F7);
+      color:#00783e;
     `);
   });
 
