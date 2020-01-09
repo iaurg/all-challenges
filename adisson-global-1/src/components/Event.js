@@ -44,7 +44,11 @@ export default function Event({ id, name, markets }) {
       setChecked(JSON.stringify(updateStorage));
       return;
     }
-
+    setChecked(
+      JSON.stringify({
+        [eventId]: { [marketName]: { [betName]: { betValue } } },
+      })
+    );
     localStorage.setItem(
       'bets',
       JSON.stringify({
