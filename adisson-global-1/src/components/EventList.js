@@ -5,6 +5,7 @@ import Event from './Event';
 
 export default function EventList() {
   const [eventList, setEventList] = useState(null);
+
   useEffect(() => {
     async function fetchData() {
       const result = await axios(

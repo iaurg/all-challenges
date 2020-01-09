@@ -9,7 +9,7 @@ export default function Event({ id, name, markets }) {
     if (bets) {
       setChecked(bets);
     }
-  }, []);
+  }, [checked]);
 
   function changeButton(eventId, marketName, betName, betValue) {
     const betsStorage = JSON.parse(localStorage.getItem('bets'));
@@ -30,8 +30,8 @@ export default function Event({ id, name, markets }) {
           ...betsStorage,
         };
 
-        setChecked(JSON.stringify(updateStorage));
         localStorage.setItem('bets', JSON.stringify(updateStorage));
+        setChecked(JSON.stringify(updateStorage));
         return;
       }
 
@@ -40,8 +40,8 @@ export default function Event({ id, name, markets }) {
         [eventId]: { [marketName]: { [betName]: { betValue } } },
       };
 
-      setChecked(JSON.stringify(updateStorage));
       localStorage.setItem('bets', JSON.stringify(updateStorage));
+      setChecked(JSON.stringify(updateStorage));
       return;
     }
 
