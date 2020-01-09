@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render correct event 1`] = `
+exports[`Test Event Component should render correct event 1`] = `
 <DocumentFragment>
   <div
     class="css-nil 📦b-top_1px-solid-E4E7EB 📦b-rgt_1px-solid-E4E7EB 📦b-btm_1px-solid-E4E7EB 📦b-lft_1px-solid-E4E7EB 📦bblr_5px 📦bbrr_5px 📦btlr_5px 📦btrr_5px 📦mt_15px 📦pb_20px 📦box-szg_border-box"
