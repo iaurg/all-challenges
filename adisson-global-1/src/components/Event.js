@@ -17,15 +17,20 @@ export default function Event({ id, name, markets }) {
     if (betsStorage) {
       if (betsStorage[eventId]) {
         if (betsStorage[eventId][marketName]) {
-          betsStorage[eventId][marketName] = {
-            [betName]: betValue,
-          };
+          if (betName === Object.keys(betsStorage[eventId][marketName])[0]) {
+            betsStorage[eventId][marketName] = {};
+          } else {
+            betsStorage[eventId][marketName] = {
+              [betName]: betValue,
+            };
+          }
         } else {
           betsStorage[eventId] = {
             ...betsStorage[eventId],
             [marketName]: { [betName]: { betValue } },
           };
         }
+
         const updateStorage = {
           ...betsStorage,
         };
@@ -49,6 +54,7 @@ export default function Event({ id, name, markets }) {
         [eventId]: { [marketName]: { [betName]: { betValue } } },
       })
     );
+
     localStorage.setItem(
       'bets',
       JSON.stringify({
