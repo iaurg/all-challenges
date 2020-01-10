@@ -37,34 +37,6 @@ exports[`Test Event Component should render correct event 1`] = `
         </button>
       </div>
     </div>
-    <div
-      class="css-nil 📦pb_10px 📦pt_20px 📦box-szg_border-box"
-    >
-      <h4
-        class="📦mt_0px 📦mb_0px 📦fnt-sze_16px 📦f-wght_500 📦ln-ht_20px 📦ltr-spc_-0-05px 📦fnt-fam_b77syt 📦color_234361 📦pb_20px 📦pl_20px 📦box-szg_border-box"
-      >
-        Player to Score First
-      </h4>
-      <div
-        class="css-nil 📦w_100prcnt 📦dspl_flex 📦algn-itms_left 📦pl_20px 📦just-cnt_left 📦flx-wrap_wrap 📦box-szg_border-box"
-      >
-        <button
-          class="css-11fu0id 📦fnt-fam_b77syt 📦mt_5px 📦fnt-sze_12px 📦f-wght_500 📦ln-ht_32px 📦ltr-spc_0 📦btrr_3px 📦bbrr_3px 📦btlr_3px 📦bblr_3px 📦pt_0px 📦pb_0px 📦pr_16px 📦pl_16px 📦ml_0px 📦mr_10px 📦mb_0px 📦h_32px 📦pst_relative 📦dspl_inline-flex 📦algn-itms_center 📦flx-wrap_nowrap 📦box-szg_border-box"
-        >
-          Ronaldo - 1.15
-        </button>
-        <button
-          class="css-11fu0id 📦fnt-fam_b77syt 📦mt_5px 📦fnt-sze_12px 📦f-wght_500 📦ln-ht_32px 📦ltr-spc_0 📦btrr_3px 📦bbrr_3px 📦btlr_3px 📦bblr_3px 📦pt_0px 📦pb_0px 📦pr_16px 📦pl_16px 📦ml_0px 📦mr_10px 📦mb_0px 📦h_32px 📦pst_relative 📦dspl_inline-flex 📦algn-itms_center 📦flx-wrap_nowrap 📦box-szg_border-box"
-        >
-          Messi - 1.3
-        </button>
-        <button
-          class="css-11fu0id 📦fnt-fam_b77syt 📦mt_5px 📦fnt-sze_12px 📦f-wght_500 📦ln-ht_32px 📦ltr-spc_0 📦btrr_3px 📦bbrr_3px 📦btlr_3px 📦bblr_3px 📦pt_0px 📦pb_0px 📦pr_16px 📦pl_16px 📦ml_0px 📦mr_10px 📦mb_0px 📦h_32px 📦pst_relative 📦dspl_inline-flex 📦algn-itms_center 📦flx-wrap_nowrap 📦box-szg_border-box"
-        >
-          Bale - 1.35
-        </button>
-      </div>
-    </div>
   </div>
 </DocumentFragment>
 `;

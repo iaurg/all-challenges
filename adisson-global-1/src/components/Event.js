@@ -11,57 +11,43 @@ export default function Event({ id, name, markets }) {
       setChecked(bets);
     }
   }, [checked]);
-
+  // Look this can be better...Refactor!
   function changeButton(eventId, marketName, betName, betValue) {
     const betsStorage = JSON.parse(localStorage.getItem('bets'));
-
+    const betObject = {
+      event: {
+        id: eventId,
+        markets: {
+          market: {
+            name: marketName,
+            bet: {
+              betName,
+              betValue,
+            },
+          },
+        },
+      },
+    };
+    // Not good big O
     if (betsStorage) {
-      if (betsStorage[eventId]) {
-        if (betsStorage[eventId][marketName]) {
-          if (betName === Object.keys(betsStorage[eventId][marketName])[0]) {
-            betsStorage[eventId][marketName] = {};
-          } else {
-            betsStorage[eventId][marketName] = {
-              [betName]: betValue,
-            };
+      betsStorage.map(item => {
+        if (item.event.id === eventId) {
+          let holdItem = item.event.markets;
+          holdItem = { text: 2 };
+          for (const [key, value] of Object.entries(item.event.markets)) {
+            console.log(key, value.name); // "a 5", "b 7", "c 9"
           }
-        } else {
-          betsStorage[eventId] = {
-            ...betsStorage[eventId],
-            [marketName]: { [betName]: { betValue } },
-          };
+          // const updateStorage = [...betsStorage, betObject];
+          // localStorage.setItem('bets', JSON.stringify(updateStorage));
         }
-
-        const updateStorage = {
-          ...betsStorage,
-        };
-
-        localStorage.setItem('bets', JSON.stringify(updateStorage));
-        setChecked(JSON.stringify(updateStorage));
-        return;
-      }
-
-      const updateStorage = {
-        ...betsStorage,
-        [eventId]: { [marketName]: { [betName]: { betValue } } },
-      };
-
-      localStorage.setItem('bets', JSON.stringify(updateStorage));
-      setChecked(JSON.stringify(updateStorage));
+      });
+      // const updateStorage = [...betsStorage, betObject];
+      // localStorage.setItem('bets', JSON.stringify(updateStorage));
       return;
     }
-    setChecked(
-      JSON.stringify({
-        [eventId]: { [marketName]: { [betName]: { betValue } } },
-      })
-    );
 
-    localStorage.setItem(
-      'bets',
-      JSON.stringify({
-        [eventId]: { [marketName]: { [betName]: { betValue } } },
-      })
-    );
+    setChecked(JSON.stringify([betObject]));
+    localStorage.setItem('bets', JSON.stringify([betObject]));
   }
 
   return (

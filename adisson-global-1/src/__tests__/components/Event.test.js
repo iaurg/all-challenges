@@ -19,27 +19,6 @@ const marketsModel = [
       },
     ],
   },
-  {
-    id: 'MKT_2',
-    name: 'Player to Score First',
-    selections: [
-      {
-        id: 'SEL_3',
-        name: 'Ronaldo',
-        price: 1.15,
-      },
-      {
-        id: 'SEL_4',
-        name: 'Messi',
-        price: 1.3,
-      },
-      {
-        id: 'SEL_5',
-        name: 'Bale',
-        price: 1.35,
-      },
-    ],
-  },
 ];
 
 describe('Test Event Component', () => {
