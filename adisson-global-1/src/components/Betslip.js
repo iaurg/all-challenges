@@ -23,9 +23,9 @@ function Betslip() {
         {Object.entries(data).length === 0 ? (
           <Paragraph>No bets</Paragraph>
         ) : (
-          Object.keys(data).map((item, i) => (
-            <li className="travelcompany-input" key={i}>
-              <span className="input-label">{[item][i]}</span>
+          data.map(item => (
+            <li className="travelcompany-input" key={item.betId}>
+              <span className="input-label">{item.betName}</span>
             </li>
           ))
         )}

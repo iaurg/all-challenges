@@ -12,37 +12,34 @@ export default function Event({ id, name, markets }) {
     }
   }, [checked]);
   // Look this can be better...Refactor!
-  function changeButton(eventId, marketName, betName, betValue) {
+  function removeBet(betId) {
+    const betsStorage = JSON.parse(localStorage.getItem('bets'));
+    if (betsStorage) {
+      const newItems = betsStorage.filter(bet => bet.betId !== betId);
+      const updateStorage = [...newItems];
+      if (updateStorage.length === 0) {
+        setChecked([]);
+        localStorage.removeItem('bets');
+        return;
+      }
+      localStorage.setItem('bets', JSON.stringify(updateStorage));
+      setChecked(JSON.stringify([updateStorage]));
+    }
+  }
+
+  function changeButton(betId, betName, betValue, marketName) {
     const betsStorage = JSON.parse(localStorage.getItem('bets'));
     const betObject = {
-      event: {
-        id: eventId,
-        markets: {
-          market: {
-            name: marketName,
-            bet: {
-              betName,
-              betValue,
-            },
-          },
-        },
-      },
+      marketName,
+      betId,
+      betName,
+      betValue,
     };
-    // Not good big O
+
     if (betsStorage) {
-      betsStorage.map(item => {
-        if (item.event.id === eventId) {
-          let holdItem = item.event.markets;
-          holdItem = { text: 2 };
-          for (const [key, value] of Object.entries(item.event.markets)) {
-            console.log(key, value.name); // "a 5", "b 7", "c 9"
-          }
-          // const updateStorage = [...betsStorage, betObject];
-          // localStorage.setItem('bets', JSON.stringify(updateStorage));
-        }
-      });
-      // const updateStorage = [...betsStorage, betObject];
-      // localStorage.setItem('bets', JSON.stringify(updateStorage));
+      const updateStorage = [...betsStorage, betObject];
+      setChecked(JSON.stringify(updateStorage));
+      localStorage.setItem('bets', JSON.stringify(updateStorage));
       return;
     }
 
@@ -86,7 +83,14 @@ export default function Event({ id, name, markets }) {
                   checked.includes(option.name) ? 'primary' : 'default'
                 }
                 onClick={() =>
-                  changeButton(id, market.name, option.name, option.price)
+                  checked.includes(option.id)
+                    ? removeBet(option.id)
+                    : changeButton(
+                        option.id,
+                        option.name,
+                        option.value,
+                        market.name
+                      )
                 }
               >
                 {option.name} - {option.price}
