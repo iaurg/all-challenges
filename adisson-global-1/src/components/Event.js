@@ -32,8 +32,8 @@ export default function Event({ id, name, markets }) {
     const betObject = {
       marketName,
       betId,
-      betName,
       betValue,
+      betName,
     };
 
     if (betsStorage) {
@@ -88,7 +88,7 @@ export default function Event({ id, name, markets }) {
                     : changeButton(
                         option.id,
                         option.name,
-                        option.value,
+                        option.price,
                         market.name
                       )
                 }
