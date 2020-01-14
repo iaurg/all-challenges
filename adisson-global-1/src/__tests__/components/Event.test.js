@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, cleanup } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import Event from '../../components/Event';
 
 const marketsModel = [
@@ -21,74 +21,57 @@ const marketsModel = [
   },
 ];
 
+const addBetMock = jest.fn();
+const checkedBets = [
+  {
+    marketName: 'Team to Win',
+    betId: 'SEL_1',
+    betName: 'Real Madrid',
+    betPrice: 1.23,
+  },
+];
+
 describe('Test Event Component', () => {
   beforeEach(() => {
     localStorage.clear();
+    jest.clearAllMocks();
   });
 
-  it('should render correct event', () => {
-    const { asFragment } = render(
+  it('should render event', () => {
+    const { getByText } = render(
       <Event
         key="EVT_1"
         id="EVT_1"
         name="Real Madrid vs Barcelona"
         markets={marketsModel}
+        checkedBets={[]}
       />
     );
-    expect(asFragment()).toMatchSnapshot();
+
+    expect(getByText('Team to Win')).toBeInTheDocument();
   });
 
   it('change button color when click', () => {
-    const { getByText } = render(
+    const { getByText, rerender } = render(
       <Event
         id="EVT_1"
         name="Real Madrid vs Barcelona"
         markets={marketsModel}
+        addBet={addBetMock}
+        checkedBets={[]}
       />
     );
     const marketButton = getByText('Real Madrid - 1.23');
     fireEvent.click(marketButton);
-    expect(marketButton).toHaveStyle(`
-      background-image: linear-gradient(rgb(35, 194, 119), rgb(57, 157, 108));
-      color:white;
-    `);
-
-    fireEvent.click(marketButton);
-
-    expect(marketButton).toHaveStyle(`
-      background-image: linear-gradient(to bottom, #FFFFFF, #F4F5F7);
-      color:#00783e;
-    `);
-  });
-
-  it('should store on localStorage', () => {
-    let { getByText } = render(
+    expect(addBetMock).toBeCalledTimes(1);
+    rerender(
       <Event
         id="EVT_1"
         name="Real Madrid vs Barcelona"
         markets={marketsModel}
+        checkedBets={checkedBets}
       />
     );
-    const marketButton = getByText('Real Madrid - 1.23');
-    fireEvent.click(marketButton);
-
-    cleanup();
-
-    ({ getByText } = render(
-      <Event
-        id="EVT_1"
-        name="Real Madrid vs Barcelona"
-        markets={marketsModel}
-      />
-    ));
-
-    expect(localStorage.setItem).toHaveBeenCalledWith(
-      'bets',
-      JSON.stringify({
-        EVT_1: { 'Team to Win': { 'Real Madrid': { betValue: 1.23 } } },
-      })
-    );
-
     expect(marketButton).toHaveStyle(`
       background-image: linear-gradient(rgb(35, 194, 119), rgb(57, 157, 108));
       color:white;
