@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   SideSheet,
   Paragraph,
@@ -9,35 +9,8 @@ import {
   Heading,
 } from 'evergreen-ui';
 
-function Betslip() {
+function Betslip({ checkedBets, removeBet }) {
   const [isShow, setShow] = useState(false);
-  const [data, setData] = useState([]);
-
-  function getData() {
-    const bets = localStorage.getItem('bets');
-    if (bets) {
-      setData(JSON.parse(bets));
-    }
-  }
-
-  // useEffect(() => {
-  //   getData();
-  // }, [data]);
-
-  function removeBet(betId) {
-    const betsStorage = JSON.parse(localStorage.getItem('bets'));
-    if (betsStorage) {
-      const newItems = betsStorage.filter(bet => bet.betId !== betId);
-      const updateStorage = [...newItems];
-      if (updateStorage.length === 0) {
-        localStorage.removeItem('bets');
-        setData([]);
-        return;
-      }
-      localStorage.setItem('bets', JSON.stringify(updateStorage));
-      setData(updateStorage);
-    }
-  }
 
   return (
     <>
@@ -45,10 +18,9 @@ function Betslip() {
         width={300}
         isShown={isShow}
         onCloseComplete={() => setShow(false)}
-        onOpenComplete={() => getData()}
         preventBodyScrolling
       >
-        {Object.entries(data).length === 0 ? (
+        {checkedBets.length === 0 ? (
           <Paragraph>No bets</Paragraph>
         ) : (
           <Pane
@@ -58,7 +30,7 @@ function Betslip() {
             alignItems="center"
             justifyContent="center"
           >
-            {data.map(item => (
+            {checkedBets.map(item => (
               <Card
                 key={item.betId}
                 width="90%"
@@ -73,7 +45,7 @@ function Betslip() {
                   {item.betName} - {item.marketName}
                 </Heading>
                 <Text size={600} paddingTop={10} paddingBottom={10}>
-                  {item.betValue}
+                  {item.betPrice}
                 </Text>
                 <Button
                   intent="danger"

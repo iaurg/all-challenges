@@ -1,9 +1,9 @@
 import React from 'react';
-import { render, fireEvent, dispatch } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import Betslip from '../../components/Betslip';
 
 describe('Test Bets list', () => {
-  it('shouldS bet list start empty', () => {
+  it('should bet list starts empty', () => {
     const { getByText } = render(<Betslip />);
     const betButton = getByText('See Bets');
     expect(betButton).toBeInTheDocument();

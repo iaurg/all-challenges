@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Pane, Alert, Spinner } from 'evergreen-ui';
 import axios from 'axios';
 import Event from './Event';
+import Betslip from './Betslip';
 
 export default function EventList() {
   const [eventList, setEventList] = useState(null);
+  const [checked, setChecked] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -14,7 +16,31 @@ export default function EventList() {
       setEventList(result.data);
     }
     fetchData();
+    const bets = localStorage.getItem('bets', JSON.stringify(checked));
+    if (bets) {
+      setChecked(JSON.parse(bets));
+    }
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem('bets', JSON.stringify(checked));
+  }, [checked]);
+
+  function removeBet(betId) {
+    const filteredBet = checked.filter(bet => bet.betId !== betId);
+    setChecked(filteredBet);
+  }
+
+  function addBet(betId, betName, betPrice, marketName) {
+    const betObject = {
+      marketName,
+      betId,
+      betName,
+      betPrice,
+    };
+    setChecked([...checked, betObject]);
+    localStorage.setItem('bets', JSON.stringify(checked));
+  }
 
   if (!eventList) {
     return (
@@ -32,6 +58,8 @@ export default function EventList() {
 
   return (
     <Pane data-testid="event-list">
+      <Betslip removeBet={e => removeBet(e)} checkedBets={checked} />
+
       {eventList.length ? (
         eventList
           .filter(event => event.markets.length > 0)
@@ -41,6 +69,11 @@ export default function EventList() {
               id={event.id}
               name={event.name}
               markets={event.markets}
+              addBet={(betId, betName, betPrice, marketName) =>
+                addBet(betId, betName, betPrice, marketName)
+              }
+              removeBet={e => removeBet(e)}
+              checkedBets={checked}
             />
           ))
       ) : (

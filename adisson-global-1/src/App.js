@@ -17,7 +17,6 @@ function App() {
       width="100%"
       maxWidth={350}
     >
-      <Betslip />
       <EventList />
     </Pane>
   );
