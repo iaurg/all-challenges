@@ -22,6 +22,7 @@ const marketsModel = [
 ];
 
 const addBetMock = jest.fn();
+const removeBetMock = jest.fn();
 const checkedBets = [
   {
     marketName: 'Team to Win',
@@ -45,6 +46,8 @@ describe('Test Event Component', () => {
         name="Real Madrid vs Barcelona"
         markets={marketsModel}
         checkedBets={[]}
+        removeBet={removeBetMock}
+        addBet={addBetMock}
       />
     );
 
@@ -57,6 +60,7 @@ describe('Test Event Component', () => {
         id="EVT_1"
         name="Real Madrid vs Barcelona"
         markets={marketsModel}
+        removeBet={removeBetMock}
         addBet={addBetMock}
         checkedBets={[]}
       />
@@ -70,6 +74,8 @@ describe('Test Event Component', () => {
         name="Real Madrid vs Barcelona"
         markets={marketsModel}
         checkedBets={checkedBets}
+        removeBet={removeBetMock}
+        addBet={addBetMock}
       />
     );
     expect(marketButton).toHaveStyle(`

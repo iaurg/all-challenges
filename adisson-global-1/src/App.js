@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import { Pane } from 'evergreen-ui';
 import EventList from './components/EventList';
 

@@ -16,7 +16,7 @@ export default function EventList() {
       setEventList(result.data);
     }
     fetchData();
-    const bets = localStorage.getItem('bets', JSON.stringify(checked));
+    const bets = localStorage.getItem('bets');
     if (bets) {
       setChecked(JSON.parse(bets));
     }

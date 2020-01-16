@@ -2,9 +2,12 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import Betslip from '../../components/Betslip';
 
+const removeBetMock = jest.fn();
 describe('Test Bets list', () => {
   it('should bet list starts empty', () => {
-    const { getByText } = render(<Betslip checkedBets={[]} />);
+    const { getByText } = render(
+      <Betslip checkedBets={[]} removeBet={removeBetMock} />
+    );
     const betButton = getByText('See Bets');
     expect(betButton).toBeInTheDocument();
     fireEvent.click(betButton);
@@ -22,6 +25,7 @@ describe('Test Bets list', () => {
             betPrice: 1.23,
           },
         ]}
+        removeBet={removeBetMock}
       />
     );
     const betButton = getByText('See Bets');
