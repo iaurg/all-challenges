@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Pane, Card, Heading, Button } from 'evergreen-ui';
 import PropTypes from 'prop-types';
 
@@ -63,6 +63,10 @@ export default function Event({
   );
 }
 
+Event.defaultProps = {
+  checkedBets: [],
+};
+
 Event.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
@@ -79,4 +83,14 @@ Event.propTypes = {
       ),
     })
   ).isRequired,
+  removeBet: PropTypes.func.isRequired,
+  addBet: PropTypes.func.isRequired,
+  checkedBets: PropTypes.arrayOf(
+    PropTypes.shape({
+      marketName: PropTypes.string.isRequired,
+      betId: PropTypes.string.isRequired,
+      betName: PropTypes.string.isRequired,
+      betPrice: PropTypes.number.isRequired,
+    })
+  ),
 };

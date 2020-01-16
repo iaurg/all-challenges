@@ -8,6 +8,7 @@ import {
   Card,
   Heading,
 } from 'evergreen-ui';
+import PropTypes from 'prop-types';
 
 function Betslip({ checkedBets, removeBet }) {
   const [isShow, setShow] = useState(false);
@@ -75,5 +76,21 @@ function Betslip({ checkedBets, removeBet }) {
     </>
   );
 }
+
+Betslip.defaultProps = {
+  checkedBets: [],
+};
+
+Betslip.propTypes = {
+  checkedBets: PropTypes.arrayOf(
+    PropTypes.shape({
+      marketName: PropTypes.string.isRequired,
+      betId: PropTypes.string.isRequired,
+      betName: PropTypes.string.isRequired,
+      betPrice: PropTypes.number.isRequired,
+    })
+  ),
+  removeBet: PropTypes.func.isRequired,
+};
 
 export default Betslip;
