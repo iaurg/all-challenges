@@ -8,9 +8,9 @@ O que precisa ser feito:
 - [x] Biblioteca UI (Evergreen)
 - [x] ESLint, editorconfig e Prettier
 - [x] Configuração de Testes
-- [ ] Teste do sistema
+- [x] Teste do sistema
 - [x] Tela de listagem de eventos
-- [ ] Listagem de apostas
+- [x] Listagem de apostas
 
 ## Recursos
 
@@ -23,3 +23,8 @@ O que precisa ser feito:
 
 - Antes de iniciar já sei que terei algumas "travadas" com testes, apesar de já ter estudado e aplicado um pouco até o momento, ainda tenho dificuldades.
 - Escolhi uma biblioteca UI que nunca utilizei (Evergreen), então pode ter alguma curva de aprendizado, mas creio que bem tranquila.
+
+## Tempo para conclusão do desafio
+
+🕒 24:38:19
+Como visto no inicio do projeto a maior parte do tempo foi pesquisando/estudando sobre testes, fiquei muitas horas vendo conteúdos do Kent C. Odds e teorias de testes como TDD para conseguir passar por alguns problemas. Travei em diversos momentos porém consegui fazer. Creio que podem ter testes melhores e pensei em utilizar o Cypress como um teste mais visual, porém deixarei para um próximo treino.
