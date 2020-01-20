@@ -2,7 +2,9 @@
 
 Este desafio é realizado com base no repositorio da [Addison Global](https://github.com/addisonglobal/frontend-technical-test) e é o [segundo](https://github.com/Italox/all-challenges) da lista de desafios.
 
-O que precisa ser feito:
+![GIF Demo App](./image/demo_app.gif "GIF Demo App")
+
+O que foi feito:
 
 - [x] Usar create-react-app
 - [x] Biblioteca UI (Evergreen)
