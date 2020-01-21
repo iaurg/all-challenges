@@ -2,6 +2,8 @@
 
 Um aplicativo simples para mostrar a previsão do tempo de sua cidade. Criado com base no desafio da [1STi](https://github.com/1STi/desafio-frontend/)
 
+![GIF Demo App](./image/demo_app.gif "GIF Demo App")
+
 ```
 git clone
 // Você já pode ver o projeto rodando, basta abrir o index.html, caso queira editar o less rode os comandos abaixo
