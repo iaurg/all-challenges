@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Binary to Decimal Converter</title>
+    <meta
+      name="description"
+      content="Convert binary to decimal using this converter, easy and fast!"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Bin2Dec</h1>
+      <fieldset>
+        <label for="nameField">Insert Binary</label>
+        <input type="text" placeholder="0110111" id="binaryInput" />
+        <button class="button button-outline" id="convertButton">
+          Convert
+        </button>
+      </fieldset>
+      <span id="resultConverted"></span>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
