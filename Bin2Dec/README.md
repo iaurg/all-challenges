@@ -31,7 +31,7 @@ constraints:
 
 ## Extras by me
 
-- [ ] A wonderful style
+- [x] A wonderful style
 - [ ] Do a hard mode binary convert using mathematical function
 
 ## Useful links and resources
