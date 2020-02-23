@@ -32,12 +32,13 @@ constraints:
 ## Extras by me
 
 - [x] A wonderful style
-- [ ] Do a hard mode binary convert using mathematical function
+- [x] Do a hard mode binary convert using mathematical function
 
 ## Time
 
 First MVP: 47m
 Creating UI and styling css/html elements: 1h 10m
+Handcraft binary convertor and read about binary: 1h 06m
 
 ## Useful links and resources
 
