@@ -1,6 +1,6 @@
 # Bin2Dec
 
-**Tier:** 1-Beginner
+![GIF Demo App](./image/demo_app.gif "GIF Demo App")
 
 Binary is the number system all digital computers are based on.
 Therefore it's important for developers to understand binary, or base 2,
