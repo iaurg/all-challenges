@@ -34,6 +34,11 @@ constraints:
 - [x] A wonderful style
 - [ ] Do a hard mode binary convert using mathematical function
 
+## Time
+
+First MVP: 47m
+Creating UI and styling css/html elements: 1h 10m
+
 ## Useful links and resources
 
 [Binary number system](https://en.wikipedia.org/wiki/Binary_number)
