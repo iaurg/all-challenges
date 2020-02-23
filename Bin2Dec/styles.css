@@ -1,0 +1,95 @@
+/*Yeah, it's a bit like Tailwind, but I don't need the entire framework hehe*/
+
+@import url("https://fonts.googleapis.com/css?family=Tomorrow:700&display=swap");
+
+body {
+  background-color: #1a202c;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+h1 {
+  font-family: "Tomorrow", Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  color: #000;
+  margin: 0 0 15px 0;
+}
+
+p {
+  font-size: 1.05rem;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.container {
+  background-color: #f7fafc;
+  color: #2d3748;
+  max-width: 450px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 6px;
+  padding: 20px;
+  box-shadow: 0px 0px 26px 10px rgba(72, 187, 120, 0.28);
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="text"] {
+  background-color: #f7fafc;
+  border: none;
+  padding: 15px 3%;
+  margin: 20px 0;
+  width: 94%;
+  border-radius: 6px;
+  border: 2px solid #e2e8f0;
+}
+
+#convertButton {
+  width: 100%;
+  border-radius: 6px;
+  background-color: #48bb78;
+  cursor: pointer;
+  color: #fff;
+  padding: 15px 0;
+  border: none;
+  box-shadow: 0 0 0 0 rgba(72, 187, 120, 1);
+  transform: scale(1);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.99);
+    box-shadow: 0 0 0 0 rgba(72, 187, 120, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(72, 187, 120, 0);
+  }
+
+  100% {
+    transform: scale(0.99);
+    box-shadow: 0 0 0 0 rgba(72, 187, 120, 0);
+  }
+}
+
+#resultConverted {
+  text-align: center;
+  width: 100%;
+  font-size: 4rem;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition-timing-function: linear, step-end;
+}
+
+.show {
+  transition: opacity 1s linear, height 1s step-start;
+  margin: 15px 0;
+  opacity: 1 !important;
+  height: auto !important;
+}

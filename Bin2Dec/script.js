@@ -33,4 +33,5 @@ binaryInput.addEventListener("keypress", function(e) {
 
 convertButton.addEventListener("click", function() {
   resultConverted.innerHTML = parseInt(binaryInput.value, 2);
+  resultConverted.classList.add("show");
 });

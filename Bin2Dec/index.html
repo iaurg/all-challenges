@@ -16,17 +16,21 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css"
     />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="container">
       <h1>Bin2Dec</h1>
-      <fieldset>
-        <label for="nameField">Insert Binary</label>
-        <input type="text" placeholder="0110111" id="binaryInput" />
-        <button class="button button-outline" id="convertButton">
-          Convert
-        </button>
-      </fieldset>
+      <p>Convert binary to decimal, easy and fast 🚀!</p>
+      <input
+        name="binaryInput"
+        type="text"
+        placeholder="Insert your binary here"
+        id="binaryInput"
+      />
+      <button id="convertButton">
+        Convert
+      </button>
       <span id="resultConverted"></span>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
