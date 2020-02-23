@@ -3,10 +3,24 @@ const convertButton = document.getElementById("convertButton");
 const resultConverted = document.getElementById("resultConverted");
 const binaryRegex = /[0-1]{1,}$/;
 
-const converteToBinary = value => parseInt(value, 2);
+/*Easy way*/
+const converteToDecimal = value => parseInt(value, 2);
+
+/*Handcrafted*/
+const convertToDecimalHand = binary => {
+  const separateAndReverse = binary
+    .toString(10)
+    .split("")
+    .reverse();
+  const result = separateAndReverse.reduce(function(acc, value, indice) {
+    return acc + value * Math.pow(2, indice);
+  }, 0);
+  return result;
+};
+
 const fillResult = () => {
   if (binaryInput.value > 0) {
-    resultConverted.innerHTML = converteToBinary(binaryInput.value);
+    resultConverted.innerHTML = converteToDecimal(binaryInput.value);
     resultConverted.classList.add("show");
     return;
   }
