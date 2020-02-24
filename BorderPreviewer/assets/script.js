@@ -1,26 +1,41 @@
 const inputNumber = document.querySelectorAll(".controller__input");
 const result = document.getElementById("result");
 const box = document.getElementById("box");
+const allEqual = document.getElementsByName("equal");
+const equalBorder = document.getElementById("equalBorder");
 
 function reset() {
   inputNumber.forEach(function(elem) {
     elem.value = "0";
   });
+  equalBorder.value = "0";
+  result.innerText = "";
+  box.style.borderRadius = "0";
 }
 
+allEqual[0].checked = false;
 window.onload = reset;
 
 function updateResult(value) {
-  const setValue = `${value["border-top-left-radius"]} ${value["border-top-right-radius"]} ${value["border-bottom-right-radius"]} ${value["border-bottom-left-radius"]}`;
+  let setValue = 0;
+  if (allEqual[0].checked) {
+    setValue = `${equalBorder.value}px`;
+  } else {
+    setValue = `${value["border-top-left-radius"]} ${value["border-top-right-radius"]} ${value["border-bottom-right-radius"]} ${value["border-bottom-left-radius"]}`;
+  }
   result.innerText = `
-    -webkit-border-radius: ${setValue}
-    -moz-border-radius: ${setValue}
-    border-radius: ${setValue} `;
+    -webkit-border-radius: ${setValue};
+    -moz-border-radius: ${setValue};
+    border-radius: ${setValue}; `;
 }
 
 function setBorder(position, value) {
-  const constructStyle = `border${position}Radius`;
-  box.style[constructStyle] = `${value}px`;
+  if (position === "equalBorder") {
+    box.style.borderRadius = `${value}px`;
+  } else {
+    const constructStyle = `border${position}Radius`;
+    box.style[constructStyle] = `${value}px`;
+  }
   updateResult(getComputedStyle(box));
 }
 
@@ -37,25 +52,51 @@ function validateOnlyNumbers(evt) {
   }
 }
 
+function onFocus(e) {
+  if (e.target.value === "0") {
+    e.target.value = "";
+  }
+}
+
+function onKeypress(e) {
+  validateOnlyNumbers(e);
+}
+
+function onInput(e) {
+  if (!e.target.value) {
+    e.target.value = "";
+    setBorder(e.target.id, e.target.value);
+    return;
+  }
+  if (validateOnlyNumbers(e)) {
+    setBorder(e.target.id, e.target.value);
+  }
+}
+
 inputNumber.forEach(function(elem) {
-  elem.addEventListener("keypress", function(e) {
-    validateOnlyNumbers(e);
-  });
+  elem.addEventListener("keypress", onKeypress);
 
-  elem.addEventListener("focus", function(e) {
-    if (e.target.value === "0") {
-      e.target.value = "";
-    }
-  });
+  elem.addEventListener("focus", onFocus);
 
-  elem.addEventListener("input", function(e) {
-    if (!e.target.value) {
-      e.target.value = "0";
-      setBorder(e.target.id, e.target.value);
-      return;
-    }
-    if (validateOnlyNumbers(e)) {
-      setBorder(e.target.id, e.target.value);
-    }
-  });
+  elem.addEventListener("input", onInput);
 });
+
+/*Equal borders*/
+allEqual[0].addEventListener("change", function(e) {
+  inputNumber.forEach(function(input) {
+    if (e.target.checked) {
+      input.style.display = "none";
+      equalBorder.style.display = "block";
+    } else {
+      input.style.display = "block";
+      equalBorder.style.display = "none";
+    }
+  });
+  reset();
+});
+
+equalBorder.addEventListener("keypress", onKeypress);
+
+equalBorder.addEventListener("focus", onFocus);
+
+equalBorder.addEventListener("input", onInput);

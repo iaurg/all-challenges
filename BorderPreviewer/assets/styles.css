@@ -40,3 +40,7 @@ input[type="number"] {
   width: 50px;
   margin: 10px 0;
 }
+
+#equalBorder {
+  display: none;
+}
