@@ -2,6 +2,14 @@ const inputNumber = document.querySelectorAll(".controller__input");
 const result = document.getElementById("result");
 const box = document.getElementById("box");
 
+function reset() {
+  inputNumber.forEach(function(elem) {
+    elem.value = "0";
+  });
+}
+
+window.onload = reset;
+
 function updateResult(value) {
   const setValue = `${value["border-top-left-radius"]} ${value["border-top-right-radius"]} ${value["border-bottom-right-radius"]} ${value["border-bottom-left-radius"]}`;
   result.innerText = `
@@ -9,8 +17,6 @@ function updateResult(value) {
     -moz-border-radius: ${setValue}
     border-radius: ${setValue} `;
 }
-
-updateResult(getComputedStyle(box));
 
 function setBorder(position, value) {
   const constructStyle = `border${position}Radius`;
