@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Border Radius Previewer Online</title>
+    <meta
+      name="description"
+      content="CSS border radius generator previewer to see how your border radius look like, copy CSS result and paste on your project"
+    />
+    <!--Yeah I know, it's some "usefull" use meta keywords in Google SERP, buuuuut, we can try-->
+    <meta
+      name="keywords"
+      content="border radius previewer, borde radius generator, border radius CSS"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.css"
+    />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Border Radius Generator</h1>
+      <p>
+        Use this CSS border radius generator previewer to see how your border
+        radius look like, copy CSS result and paste on your project
+      </p>
+
+      <div class="type">
+        <label for="type">Normal</label>
+        <input type="radio" name="type" class="type__normal" />
+
+        <label for="type">Fancy</label>
+        <input type="radio" name="type" class="type__normal" />
+      </div>
+
+      <div class="equal">
+        <label for="equal">All borders equal</label>
+        <input type="checkbox" checked name="equal" class="equal__active" />
+      </div>
+
+      <div class="controller">
+        <input
+          type="number"
+          id="TopLeft"
+          class="controller__input"
+          min="0"
+          value="0"
+        />
+        <input
+          type="number"
+          id="TopRight"
+          class="controller__input"
+          min="0"
+          value="0"
+        />
+      </div>
+
+      <div id="box">
+        <div id="result"></div>
+      </div>
+
+      <div class="controller">
+        <input
+          type="number"
+          id="BottomLeft"
+          class="controller__input"
+          min="0"
+          value="0"
+        />
+        <input
+          type="number"
+          id="BottomRight"
+          class="controller__input"
+          min="0"
+          value="0"
+        />
+      </div>
+    </div>
+    <script src="assets/script.js"></script>
+  </body>
+</html>
