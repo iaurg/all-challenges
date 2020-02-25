@@ -34,7 +34,6 @@ function setBorder(position, value) {
   if (position === "equalBorder") {
     box.style.borderRadius = `${value}px`;
   } else if (position === "fancy") {
-    console.log("fancyyy");
     let difference = 100 - value;
     box.style.borderRadius = `${value}% ${difference}% 100% 0% / 0% 100% 0% 100%`;
   } else {
