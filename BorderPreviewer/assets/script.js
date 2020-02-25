@@ -9,7 +9,7 @@ function reset() {
     elem.value = "0";
   });
   equalBorder.value = "0";
-  result.innerText = "";
+  result.innerText = "Border Radius Generator 😉";
   box.style.borderRadius = "0";
 }
 
@@ -23,10 +23,7 @@ function updateResult(value) {
   } else {
     setValue = `${value["border-top-left-radius"]} ${value["border-top-right-radius"]} ${value["border-bottom-right-radius"]} ${value["border-bottom-left-radius"]}`;
   }
-  result.innerText = `
-    -webkit-border-radius: ${setValue};
-    -moz-border-radius: ${setValue};
-    border-radius: ${setValue}; `;
+  result.innerText = `-webkit-border-radius: ${setValue}; -moz-border-radius: ${setValue}; border-radius: ${setValue};`;
 }
 
 function setBorder(position, value) {
@@ -100,3 +97,17 @@ equalBorder.addEventListener("keypress", onKeypress);
 equalBorder.addEventListener("focus", onFocus);
 
 equalBorder.addEventListener("input", onInput);
+
+/*Copy result*/
+
+function copyToClipBoard() {
+  result.select();
+  document.execCommand("copy");
+  const alert = document.getElementById("alertCopy");
+  alert.classList.add("showAlert");
+  setTimeout(function() {
+    alert.classList.remove("showAlert");
+  }, 1000);
+}
+
+result.addEventListener("click", copyToClipBoard);
