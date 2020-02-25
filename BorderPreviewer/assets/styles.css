@@ -1,5 +1,5 @@
 body {
-  background-color: #edf2f7;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,6 +17,87 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
+  border: 1px solid #fff;
+  background-color: #edf2f7;
+  color: #4a5568 !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+  border-radius: 6px;
+}
+
+input[type="number"]::placeholder {
+  color: #a0aec0;
+}
+
+input[type="number"]:focus {
+  border: 1px solid #a0a0a0;
+  background-color: #fff !important;
+}
+
+textarea::-moz-selection {
+  background: none;
+}
+textarea::selection {
+  background: none;
+}
+
+label {
+  display: -webkit-inline-box;
+  display: inline-flex;
+  -webkit-box-align: baseline;
+  align-items: baseline;
+}
+label input[type="checkbox"],
+label input[type="radio"] {
+  position: relative;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: inherit;
+  width: 1em;
+  margin: 0;
+  color: #48bb78;
+  outline: none;
+  font-family: "Font Awesome 5 Pro";
+  -webkit-transition: 300ms ease-out;
+  transition: 300ms ease-out;
+  margin: 0 5px;
+}
+
+label input[type="checkbox"]::after,
+label input[type="radio"]::after {
+  content: "\f111";
+  display: inline-block;
+  text-align: center;
+  width: 1em;
+}
+label input[type="checkbox"]:checked::after,
+label input[type="radio"]:checked::after {
+  font-weight: 900;
+}
+label input[type="checkbox"]:active,
+label input[type="radio"]:active {
+  -webkit-transform: scale(0.6);
+  transform: scale(0.6);
+}
+label input[type="checkbox"] + span,
+label input[type="radio"] + span {
+  margin-left: 0.35em;
+}
+label input[type="checkbox"]:checked::after {
+  content: "\f058";
+}
+label input[type="radio"]:checked::after {
+  content: "\f192";
+}
+
+label input[type="checkbox"]:after {
+  content: "\f0c8";
+}
+label input[type="checkbox"]:checked::after {
+  content: "\f14a";
 }
 
 .container {
@@ -54,22 +135,13 @@ input[type="number"] {
   cursor: pointer;
 }
 
-textarea::-moz-selection {
-  background: none;
-}
-textarea::selection {
-  background: none;
-}
- {
-  outline: none;
-}
-
 #alertCopy {
   transition: all 0.3s linear;
   position: absolute;
   top: 50%;
   z-index: 999;
   background-color: #edf2f7;
+  font-size: 16px;
   padding: 20px;
   opacity: 0;
   border-radius: 4px;
@@ -99,4 +171,5 @@ textarea::selection {
 
 #equalBorder {
   display: none;
+  margin: 15px 0;
 }
