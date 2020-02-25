@@ -3,6 +3,9 @@ const result = document.getElementById("result");
 const box = document.getElementById("box");
 const allEqual = document.getElementsByName("equal");
 const equalBorder = document.getElementById("equalBorder");
+const typeNormal = document.getElementById("type__normal");
+const typeFancy = document.getElementById("type__fancy");
+const topFancy = document.getElementById("TopFancy");
 
 function reset() {
   inputNumber.forEach(function(elem) {
@@ -11,6 +14,7 @@ function reset() {
   equalBorder.value = "0";
   result.innerText = "Border Radius Generator 😉";
   box.style.borderRadius = "0";
+  typeNormal.checked = true;
 }
 
 allEqual[0].checked = false;
@@ -29,10 +33,15 @@ function updateResult(value) {
 function setBorder(position, value) {
   if (position === "equalBorder") {
     box.style.borderRadius = `${value}px`;
+  } else if (position === "fancy") {
+    console.log("fancyyy");
+    let difference = 100 - value;
+    box.style.borderRadius = `${value}% ${difference}% 100% 0% / 0% 100% 0% 100%`;
   } else {
     const constructStyle = `border${position}Radius`;
     box.style[constructStyle] = `${value}px`;
   }
+
   updateResult(getComputedStyle(box));
 }
 
@@ -111,3 +120,13 @@ function copyToClipBoard() {
 }
 
 result.addEventListener("click", copyToClipBoard);
+
+/* Fancy type */
+typeFancy.addEventListener("click", function(e) {
+  allEqual[0].checked = false;
+});
+
+topFancy.addEventListener("input", function(e) {
+  setBorder("fancy", e.target.value);
+  console.log(e.target.value);
+});

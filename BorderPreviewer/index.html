@@ -34,11 +34,11 @@
       <div class="type">
         <label for="type"
           >Normal
-          <input type="radio" name="type" class="type__normal" />
+          <input type="radio" name="type" id="type__normal" />
         </label>
         <label for="type"
           >Fancy
-          <input type="radio" name="type" class="type__normal" />
+          <input type="radio" name="type" id="type__fancy" />
         </label>
       </div>
 
@@ -65,6 +65,10 @@
           min="0"
           value="0"
         />
+      </div>
+
+      <div class="fancyController">
+        <input type="range" id="TopFancy" min="0" max="100" />
       </div>
 
       <div id="box">

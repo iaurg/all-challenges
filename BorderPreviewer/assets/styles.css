@@ -173,3 +173,13 @@ label input[type="checkbox"]:checked::after {
   display: none;
   margin: 15px 0;
 }
+
+/*Fancy Controller*/
+
+.fancyController {
+  width: 100%;
+}
+
+#TopFancy {
+  width: 100%;
+}
