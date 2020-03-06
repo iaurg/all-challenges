@@ -43,8 +43,8 @@
       </div>
 
       <div class="equal">
-        <label for="equal"
-          >All borders equal
+        <label for="equal">
+          All borders equal
           <input type="checkbox" name="equal" class="equal__active" />
         </label>
         <input type="number" id="equalBorder" />
@@ -67,13 +67,44 @@
         />
       </div>
 
-      <div class="fancyController">
-        <input type="range" id="TopFancy" min="0" max="100" />
-      </div>
-
       <div id="box">
         <div id="alertCopy">Copied ✅</div>
         <textarea id="result" readonly="readonly"></textarea>
+        <div class="fancyController">
+          <input
+            type="range"
+            class="fancySlider"
+            id="TopFancy"
+            min="0"
+            max="100"
+          />
+          <div class="lateralsFancy">
+            <input
+              type="range"
+              class="fancySlider"
+              id="LeftFancy"
+              orient="vertical"
+              min="0"
+              max="100"
+            />
+
+            <input
+              type="range"
+              class="fancySlider"
+              id="RightFancy"
+              orient="vertical"
+              min="0"
+              max="100"
+            />
+          </div>
+          <input
+            type="range"
+            class="fancySlider"
+            id="BottomFancy"
+            min="0"
+            max="100"
+          />
+        </div>
       </div>
 
       <div class="controller">
