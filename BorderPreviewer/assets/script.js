@@ -6,6 +6,9 @@ const equalBorder = document.getElementById("equalBorder");
 const typeNormal = document.getElementById("type__normal");
 const typeFancy = document.getElementById("type__fancy");
 const topFancy = document.getElementById("TopFancy");
+const bottomFancy = document.getElementById("BottomFancy");
+const leftFancy = document.getElementById("LeftFancy");
+const rightFancy = document.getElementById("RightFancy");
 
 function reset() {
   inputNumber.forEach(function(elem) {
@@ -33,9 +36,6 @@ function updateResult(value) {
 function setBorder(position, value) {
   if (position === "equalBorder") {
     box.style.borderRadius = `${value}px`;
-  } else if (position === "fancy") {
-    let difference = 100 - value;
-    box.style.borderRadius = `${value}% ${difference}% 100% 0% / 0% 100% 0% 100%`;
   } else {
     const constructStyle = `border${position}Radius`;
     box.style[constructStyle] = `${value}px`;
@@ -126,6 +126,38 @@ typeFancy.addEventListener("click", function(e) {
 });
 
 topFancy.addEventListener("input", function(e) {
-  setBorder("fancy", e.target.value);
-  console.log(e.target.value);
+  setBorderFancy("top", e.target.value);
 });
+
+bottomFancy.addEventListener("input", function(e) {
+  setBorderFancy("bottom", e.target.value);
+});
+
+rightFancy.addEventListener("input", function(e) {
+  setBorderFancy("right", e.target.value);
+});
+
+leftFancy.addEventListener("input", function(e) {
+  setBorderFancy("left", e.target.value);
+});
+
+function setBorderFancy(position, value) {
+  const difference = 100 - value;
+  switch (position) {
+    case "top":
+      box.style.borderTopRightRadius = `${value}% ${difference}%`;
+      break;
+    case "bottom":
+      box.style.borderBottomLeftRadius = `${difference}% ${value}%`;
+      break;
+    case "left":
+      box.style.borderTopLeftRadius = `${difference}% ${value}% `;
+      break;
+    case "right":
+      box.style.borderBottomRightRadius = `${value}% ${difference}%`;
+      break;
+    default:
+      break;
+  }
+  updateResult(getComputedStyle(box));
+}
