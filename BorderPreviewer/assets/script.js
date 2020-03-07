@@ -5,6 +5,7 @@ const allEqual = document.getElementsByName("equal");
 const equalBorder = document.getElementById("equalBorder");
 const typeNormal = document.getElementById("type__normal");
 const typeFancy = document.getElementById("type__fancy");
+const fancyController = document.getElementById("fancyController");
 const topFancy = document.getElementById("TopFancy");
 const bottomFancy = document.getElementById("BottomFancy");
 const leftFancy = document.getElementById("LeftFancy");
@@ -30,7 +31,9 @@ function updateResult(value) {
   } else {
     setValue = `${value["border-top-left-radius"]} ${value["border-top-right-radius"]} ${value["border-bottom-right-radius"]} ${value["border-bottom-left-radius"]}`;
   }
-  result.innerText = `-webkit-border-radius: ${setValue}; -moz-border-radius: ${setValue}; border-radius: ${setValue};`;
+  result.innerText = `-webkit-border-radius: ${setValue}; 
+  -moz-border-radius: ${setValue}; 
+  border-radius: ${setValue};`;
 }
 
 function setBorder(position, value) {
@@ -97,6 +100,7 @@ allEqual[0].addEventListener("change", function(e) {
       equalBorder.style.display = "none";
     }
   });
+  fancyController.style.display = "none";
   reset();
 });
 
@@ -120,9 +124,27 @@ function copyToClipBoard() {
 
 result.addEventListener("click", copyToClipBoard);
 
-/* Fancy type */
-typeFancy.addEventListener("click", function(e) {
+typeNormal.addEventListener("click", function() {
   allEqual[0].checked = false;
+  inputNumber.forEach(function(input) {
+    input.style.display = "block";
+  });
+  result.innerText = "Border Radius Generator 😉";
+  box.style.borderRadius = "0";
+  equalBorder.style.display = "none";
+  fancyController.style.display = "none";
+});
+
+/* Fancy type */
+typeFancy.addEventListener("click", function() {
+  allEqual[0].checked = false;
+  inputNumber.forEach(function(input) {
+    input.style.display = "none";
+  });
+  result.innerText = "Border Radius Generator fancy mode 😉";
+  box.style.borderRadius = "0";
+  equalBorder.style.display = "none";
+  fancyController.style.display = "flex";
 });
 
 topFancy.addEventListener("input", function(e) {
