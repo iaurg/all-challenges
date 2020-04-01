@@ -1,7 +1,7 @@
 # Repositório de desafios ⚔️
 
 <p align="center">
-    <img src="https://octodex.github.com/images/yaktocat.png" alt="Image of Yaktocat" width="100">
+    <img src="./images/no-pain-no-gain-goku.png" alt="Image of No Pain No Gain Goku" width="150">
 </p>
 
 O objetivo desse repositório é reunir todos os desafios que farei. Após estudar diversos conceitos creio que a melhor maneira de aprender é praticando, então farei o máximo de desafios contidos [neste](https://github.com/felipefialho/frontend-challenges) e [neste](https://github.com/florinpop17/app-ideas) repositório.
