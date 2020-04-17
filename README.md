@@ -17,5 +17,5 @@ Desafios online:
 - [Previsão do Tempo](https://iaurg.github.io/all-challenges/1STi)
 - [Bin2Dec](https://iaurg.github.io/all-challenges/Bin2Dec)
 - [Border Preview](https://iaurg.github.io/all-challenges/BorderPreviewer)
-- [IMDB Landing Page] (https://iaurg.github.io/all-challenges/madmax/)
+- [IMDB Landing Page](https://iaurg.github.io/all-challenges/madmax/)
 - [Covid Money](https://iaurg.github.io/covidmoney/)
