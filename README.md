@@ -13,6 +13,9 @@ Posteriormente irei buscar novos desafios e criar fluxos/programas mais complexo
 Se por um acaso estiver vendo este repositório e identificar algo que pode ser feito de uma maneira melhor, mais eficiente ou correta, por favor me informe abrindo uma issue, agradecerei sua ajuda 🙌.
 
 Desafios online:
+
 - [Previsão do Tempo](https://iaurg.github.io/all-challenges/1STi)
 - [Bin2Dec](https://iaurg.github.io/all-challenges/Bin2Dec)
 - [Border Preview](https://iaurg.github.io/all-challenges/BorderPreviewer)
+- [IMDB Landing Page] (https://iaurg.github.io/all-challenges/madmax/)
+- [Covid Money](https://iaurg.github.io/covidmoney/)
