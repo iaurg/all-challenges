@@ -19,3 +19,4 @@ Desafios online:
 - [Border Preview](https://iaurg.github.io/all-challenges/BorderPreviewer)
 - [IMDB Landing Page](https://iaurg.github.io/all-challenges/madmax/)
 - [Covid Money](https://iaurg.github.io/covidmoney/)
+- [Twitter Flexbox](https://iaurg.github.io/all-challenges/twitter-flexbox/)
