@@ -24,3 +24,14 @@ Desafios online:
 - [Conceitos React](https://github.com/iaurg/desafio-conceitos-reactjs)
 - [Conceitos NodeJS](https://github.com/iaurg/desafio-conceitos-nodejs)
 - [Conceitos React Native](https://github.com/iaurg/desafio-conceitos-react-native)
+
+Desafios antigos:
+
+- [Rocketdevs](https://github.com/iaurg/rocketseatdevs) 
+- [Twitter copy](https://github.com/iaurg/twitter-react) 
+- [Javascript Starter](https://github.com/iaurg/RocketSeat/tree/master/JS) 
+- [Star Wars](https://github.com/iaurg/star_wars) 
+- [Background Generator](https://github.com/iaurg/background-generator) 
+- [Rocketseat Go Week 9](https://github.com/iaurg/tattoour) 
+- [Robofriends React App](https://github.com/iaurg/Robofriends)
+- [Introduction in Computer Science with Python (USP)](https://github.com/iaurg/ciencia-computacao-coursera)
