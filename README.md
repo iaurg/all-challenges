@@ -35,3 +35,20 @@ Desafios antigos:
 - [Rocketseat Go Week 9](https://github.com/iaurg/tattoour) 
 - [Robofriends React App](https://github.com/iaurg/Robofriends)
 - [Introduction in Computer Science with Python (USP)](https://github.com/iaurg/ciencia-computacao-coursera)
+
+
+### Feitos antigamente
+
+Aqui são alguns cursos e materiais que eu já conclui antigamente, então deixarei apenas como um histórico interessante
+
+- [Introduction in Computer Science with Python (USP)](https://bit.ly/2IIVuWe) - [Exercícios](https://github.com/iaurg/ciencia-computacao-coursera)
+- [Course POO - Curso em Video](https://www.youtube.com/watch?v=KlIL63MeyMY&list=PLHz_AreHm4dmGuLII3tsvryMMD7VgcT7x) - [Exercises](https://github.com/iaurg/OOP-Exercises-PHP)
+- [Introduction To JavaScript](https://www.codecademy.com/learn/introduction-to-javascript)
+- [Mastering my skill in learning with Learn How to Learn](https://www.coursera.org/learn/learning-how-to-learn)
+- [Rocketseat Javascript Starter](https://rocketseat.com.br/starter)
+- [Rocketseat Bootcamp](https://rocketseat.com.br)
+- [Introduction IA](https://www.microsoft.com/pt-br/academia) - [Summary](https://github.com/iaurg/academia-ia)
+- [The Complete Web Developer in 2018: Zero to Mastery](https://www.udemy.com/course/the-complete-web-developer-zero-to-mastery)
+- [Master Algorithms and Data Structure](https://www.udemy.com/course/master-the-coding-interview-data-structures-algorithms)
+- [Git e Github Justen](https://www.udemy.com/course/git-e-github-para-iniciantes)
+- [Jest Everywhere](https://www.youtube.com/watch?v=X1EbHgFxSdw)
